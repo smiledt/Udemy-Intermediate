@@ -6,17 +6,22 @@ using System.Windows.Forms;
 
 namespace Udemy_Intermediate
 {
-    static class Program
+    public class Person
     {
-        /// <summary>
-        /// The main entry point for the application.
-        /// </summary>
-        [STAThread]
-        static void Main()
+        public string Name;
+
+        public void Introduce(string to)
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Console.WriteLine("HI {0}, I am {1}", to, Name);
+        }
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var person = new Person();
+            person.Name = "John";
+            person.Introduce("Mosh");
         }
     }
 }
